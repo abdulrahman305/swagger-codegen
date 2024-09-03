@@ -87,7 +87,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Download codegen cli
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: codegen-cli
       - name: generate
