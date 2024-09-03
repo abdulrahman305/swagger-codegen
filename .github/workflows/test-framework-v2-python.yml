@@ -69,7 +69,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Download codegen cli
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: codegen-cli
       - name: generate
@@ -122,12 +122,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ env.JOB_NAME }}generated
           path: generated/${{ env.JOB_NAME }}
       - name: Download logs
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ env.JOB_NAME }}generate_logs
     ###############################################
@@ -138,7 +138,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Download Python V2 test cfg files
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: python-v2-sample-test-config-files
           path: generated/${{ env.JOB_NAME }}

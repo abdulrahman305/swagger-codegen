@@ -61,7 +61,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Download codegen cli
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: codegen-cli
       - name: generate
@@ -114,12 +114,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ env.JOB_NAME }}generated
           path: generated/${{ env.JOB_NAME }}
       - name: Download logs
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ env.JOB_NAME }}generate_logs
     ###############################################
@@ -133,7 +133,7 @@ jobs:
     ##### END DYNAMIC: Dependent on build environment
     ###############################################
       - name: Download Java Feign Test Files
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: java-custom-test-files
           path: java-custom-test-files
